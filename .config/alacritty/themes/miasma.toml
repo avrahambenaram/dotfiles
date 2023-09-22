@@ -1,0 +1,27 @@
+[[colors.indexed_colors]]
+color = "0x222222"
+index = 16
+
+[colors.bright]
+black = "#666666"
+blue = "#78824b"
+cyan = "#c9a554"
+green = "#5f875f"
+magenta = "#bb7744"
+red = "#685742"
+white = "#d7c483"
+yellow = "#b36d43"
+
+[colors.normal]
+black = "#222222"
+blue = "#78824b"
+cyan = "#c9a554"
+green = "#5f875f"
+magenta = "#bb7744"
+red = "#685742"
+white = "#d7c483"
+yellow = "#b36d43"
+
+[colors.primary]
+background = "#222222"
+foreground = "#c2c2b0"

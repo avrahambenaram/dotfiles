@@ -1,0 +1,1 @@
+/home/avraham/.config/hypr/scripts/lock/miasma.sh

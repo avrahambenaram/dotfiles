@@ -1,0 +1,19 @@
+map r reload
+map p print
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+map R rotate
+
+set selection-clipboard clipboard
+set font "Fira Code"
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+#search settings
+set incremental-search true
+
+#padding
+set statusbar-h-padding 0
+set statusbar-v-padding 0
