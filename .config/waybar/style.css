@@ -221,6 +221,6 @@ window.eDP-1 .modules-right {
     padding-right:1px;
     font-size: 13px;
 }
-@define-color highlight #c9a554 ;
-@define-color base1  #222222 ;
-@define-color border1 #222222;
+@define-color highlight #a11c1c  ;
+@define-color base1  rgba(0, 0, 0, 0.8);
+@define-color border1 #a11c1c;

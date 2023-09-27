@@ -10,6 +10,28 @@ rm ~/.config/wofi/style.widgets.css
 cp ~/.config/wofi/style-base.css ~/.config/wofi/style.css
 cp ~/.config/wofi/style.widgets-base.css ~/.config/wofi/style.widgets.css
 
+if [ "$THEME" = "baskerville" ]; then
+	ln -sf ~/.config/hypr/themes/baskerville.conf ~/.config/hypr/theme.conf
+
+	# Waybar style
+	echo "@define-color highlight #a11c1c  ;\n@define-color base1  rgba(0, 0, 0, 0.8);\n@define-color border1 #a11c1c;" >> ~/.config/waybar/style.css
+
+	# Alacritty
+	echo "import = [\"~/.config/alacritty/window.toml\", \"~/.config/alacritty/themes/baskerville.toml\"]" > ~/.config/alacritty/alacritty.toml
+
+	# Wofi
+	echo "@define-color highlight #a11c1c;\n@define-color base1  #444;\n@define-color base2 #222222;\n@define-color base3  #555;" >> ~/.config/wofi/style.css
+	echo "@define-color highlight #a11c1c;\n@define-color base1  #444;\n@define-color base2 #222222;\n@define-color base3  #555;" >> ~/.config/wofi/style.widgets.css
+
+	# NVIM
+	echo "export NVIM_THEME=\"miasma\"" > ~/.zshenv
+
+	# Cava
+	ln -sf ~/.config/cava/themes/baskerville ~/.config/cava/config
+
+	# Swaylock
+	ln -sf ~/.config/hypr/scripts/lock/baskerville.sh ~/.config/hypr/scripts/lock.sh
+fi
 if [ "$THEME" = "miasma" ]; then
 	ln -sf ~/.config/hypr/themes/miasma.conf ~/.config/hypr/theme.conf
 
