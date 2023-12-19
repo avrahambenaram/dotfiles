@@ -6,7 +6,7 @@ selected=$(printf '%s\n' $entries | wofi --conf=$HOME/.config/wofi/config.power 
 
 case $selected in
   cava)
-	alacritty --class="alacritty-bg" -e ~/.config/hypr/pipes.sh;;
+	alacritty --class="alacritty-bg" -e ~/.config/hypr/cava.sh;;
   cmatrix)
 	alacritty --class="alacritty-bg" -e ~/.config/hypr/cmatrix.sh;;
   pipes)
