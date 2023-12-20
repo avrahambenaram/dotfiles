@@ -1,1 +1,1 @@
-/home/avraham/.config/hypr/scripts/lock/baskerville.sh
+/home/avraham/.config/hypr/scripts/lock/miasma.sh

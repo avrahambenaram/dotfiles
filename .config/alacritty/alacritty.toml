@@ -1,1 +1,1 @@
-import = ["~/.config/alacritty/window.toml", "~/.config/alacritty/themes/miasma.toml"]
+import = ["/home/avraham/.config/alacritty/window.toml", "/home/avraham/.config/alacritty/themes/miasma.toml"]

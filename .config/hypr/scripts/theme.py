@@ -54,6 +54,8 @@ def apply_theme(theme_name, color_highlight, color_base1, color_border1, nvim_th
     # Update Alacritty config
     with open(f"{HOME}/.config/alacritty/alacritty.toml", "w") as f:
         f.write(f'import = ["{HOME}/.config/alacritty/window.toml", "{HOME}/.config/alacritty/themes/{theme_name}.toml"]')
+    with open(f"{HOME}/.config/alacritty/alacritty-bg.toml", "w") as f:
+        f.write(f'import = ["{HOME}/.config/alacritty/window-bg.toml", "{HOME}/.config/alacritty/themes/{theme_name}.toml"]')
 
     # Update NVIM theme
     with open(f"{HOME}/.zshenv", "w") as f:
