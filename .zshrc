@@ -36,7 +36,7 @@ alias waydroidRotation='sudo waydroid shell wm set-user-rotation lock'
 alias waydroidWidth='waydroid prop set persist.waydroid.width'
 alias waydroidHeight='waydroid prop set persist.waydroid.height'
 
-export BROWSER=vivaldi
+export BROWSER=librewolf
 export EDITOR=nvim
 
 # PFetch config
