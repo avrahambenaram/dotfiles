@@ -16,7 +16,20 @@ return {
 
   {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim"
+        },
+        keys = {
+          {'nb', '<cmd>Navbuddy<cr>'},
+        },
+        opts = { lsp = { auto_attach = true } }
+      }
+    },
     opts = {
       ensure_installed = { "cssls", "docker_compose_language_service", "dockerls", "gopls", "jdtls", "jsonls", "html", "lua_ls", "omnisharp", "tailwindcss", "ts_ls" },
       automatic_installation = true,  -- Automatically install servers when you launch LSP
