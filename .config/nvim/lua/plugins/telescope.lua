@@ -11,19 +11,17 @@ return {
     "sharkdp/fd",
     "BurntSushi/ripgrep"
   },
-  config = function ()
-    local builtin = require('telescope.builtin')
-
+  keys = {
     -- File navigation
-    vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-    vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-    vim.keymap.set('n', '<leader>ps', builtin.live_grep)
+    {'<leader>pf', '<cmd>Telescope find_files<cr>'},
+    {'<C-p>', '<cmd>Telescope git_files<cr>'},
+    {'<leader>ps', '<cmd>Telescope live_grep<cr>'},
 
-    -- Lsp
-    vim.keymap.set('n', 'gd', builtin.lsp_definitions)
-    vim.keymap.set('n', 'gr', builtin.lsp_references)
+    -- LSP
+    {'gd', '<cmd>Telescope lsp_definitions<cr>'},
+    {'gr', '<cmd>Telescope lsp_references<cr>'},
 
     -- Colorscheme
-    vim.keymap.set('n', 'sp', builtin.colorscheme)
-  end
+    {'sp', '<cmd>Telescope colorscheme<cr>'},
+  },
 }
