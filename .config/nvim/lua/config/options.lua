@@ -29,3 +29,8 @@ vim.opt.cursorlineopt = "both"
 vim.opt.scrolloff = 10
 
 vim.o.termguicolors = true
+
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
+vim.keymap.set("n", "<C-y>", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("v", "<C-y>", '"+y', { desc = "Yank to system clipboard" })
