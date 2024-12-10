@@ -9,6 +9,8 @@ source $ZSH/oh-my-zsh.sh
 alias ls='ls --color=tty'
 alias ll='ls -Al'   # show long listing of all except ".."
 alias l='ls -l'   # show long listing but no hidden dotfiles except "."
+alias ee='exa -al'   # show long listing of all except ".."
+alias e='exa -l'   # show long listing but no hidden dotfiles except "."
 alias weather='curl http://wttr.in'
 alias mkdir='mkdir -pv'
 alias nf='neofetch'
