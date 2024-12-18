@@ -8,10 +8,9 @@ client.background       #c6d0f5
 
 blur enable
 blur_xray false
-
-blur_passes 3
-blur_radius 9
-blur_noise 0.15
+blur_passes 5
+blur_radius 4
+blur_noise 0.1
 
 shadows enable
 shadow_blur_radius 10
