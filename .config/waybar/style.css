@@ -32,6 +32,12 @@
     }
 }
 
+@define-color highlight #ca9ee6;
+@define-color base1 #303446;
+@define-color border1 #414559;
+@define-color warning #e5c890;
+@define-color critical #e78284;
+
 /* -----------------------------------------------------------------------------
  * Base styles
  * -------------------------------------------------------------------------- */
@@ -55,24 +61,24 @@
 
 window.HDMI-A-2#waybar {
 	background: @base1;
-    border-radius: 10px;
+  border-radius: 10px;
 	font-size: 10px;
 }
 
 window.eDP-1 .modules-left {
-    background-color: @base1;
-    border-radius: 10px;
+  background-color: @base1;
+  border-radius: 10px;
 	padding: 1.5px 5px;
 	padding-right: 10px;
 }
 window.eDP-1 .modules-center {
-    background-color: @base1;
-    border-radius: 10px;
+  background-color: @base1;
+  border-radius: 10px;
 	padding: 1.5px 45px;
 }
 window.eDP-1 .modules-right {
-    background-color: @base1;
-    border-radius: 10px;
+  background-color: @base1;
+  border-radius: 10px;
 	padding: 1.5px 15px;
 }
 
@@ -95,6 +101,10 @@ window.eDP-1 .modules-right {
     margin: 1px 0px;
 }
 
+#mode {
+  border-radius: 10px;
+}
+
 /* -----------------------------------------------------------------------------
  * Modules styles
  * -------------------------------------------------------------------------- */
@@ -106,11 +116,11 @@ window.eDP-1 .modules-right {
 }
 
 #battery.warning {
-    color: orange;
+    color: @warning;
 }
 
 #battery.critical {
-    color: red;
+    color: @critical;
 }
 
 #battery.warning.discharging {
@@ -124,12 +134,12 @@ window.eDP-1 .modules-right {
 }
 
 #cpu.warning {
-    color: orange;
+    color: @warning;
     background-color: @base1;
 }
 
 #cpu.critical {
-    color: red;
+    color: @critical;
 }
 
 #memory {
@@ -139,12 +149,12 @@ window.eDP-1 .modules-right {
 }
 
 #memory.warning {
-    color: orange;
+    color: @warning;
     background-color: @base1;
  }
 
 #memory.critical {
-    color: red;
+    color: @critical;
     animation-name: blink-critical;
     animation-duration: 2s;
     padding-left:5px;
@@ -160,7 +170,7 @@ window.eDP-1 .modules-right {
 }
 
 #network.disconnected {
-    color: orange;
+    color: @warning;
 }
 
 #pulseaudio {
@@ -172,7 +182,7 @@ window.eDP-1 .modules-right {
 }
 
 #temperature.critical {
-    color: red;
+    color: @critical;
 }
 
 #window {
@@ -187,6 +197,7 @@ window.eDP-1 .modules-right {
     border-bottom: 3px solid transparent;
     margin-bottom: 0px;
     padding-right: 5px;
+    color: #bebebe;
 }
 
 #workspaces button.focused {
@@ -221,6 +232,7 @@ window.eDP-1 .modules-right {
     padding-right:1px;
     font-size: 13px;
 }
-@define-color highlight #c9a554 ;
-@define-color base1  #222222 ;
-@define-color border1 #222222;
+
+#custom-notification {
+  font-size: 14px;
+}

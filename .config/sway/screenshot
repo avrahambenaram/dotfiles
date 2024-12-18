@@ -1,0 +1,17 @@
+#!/bin/sh
+entries="Active Screen Output Area Window"
+
+selected=$(printf '%s\n' $entries | wofi -s ~/.config/wofi/style.widgets.css -c ~/.config/wofi/config.screenshot | awk '{print tolower($1)}')
+
+case $selected in
+  active)
+    grimshot --notify save active;;
+  screen)
+    grimshot --notify save screen;;
+  output)
+    grimshot --notify save output;;
+  area)
+    grimshot --notify save area;;
+  window)
+    grimshot --notify save window;;
+esac
