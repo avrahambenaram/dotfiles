@@ -13,7 +13,7 @@ alias ee='exa -al'   # show long listing of all except ".."
 alias e='exa -l'   # show long listing but no hidden dotfiles except "."
 alias weather='curl http://wttr.in'
 alias mkdir='mkdir -pv'
-alias nf='neofetch'
+alias ff='fastfetch'
 alias vi='nvim'
 
 # Waydroid aliases
