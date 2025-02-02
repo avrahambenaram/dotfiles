@@ -1,0 +1,9 @@
+use_nerdfont = true
+notify = true
+
+[keybindings]
+"q" = "quit"
+"s" = "search"
+"Left" = "seek -10s"
+"Right" = "seek +10s"
+"p" = "playpause"
