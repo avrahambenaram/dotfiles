@@ -1,3 +1,0 @@
-set $mod mod4
-include ~/.config/sway/outputs
-include ~/.config/sway/config.d/*

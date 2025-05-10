@@ -89,7 +89,7 @@ window.eDP-1 .modules-right {
 #cpu,
 #custom-keyboard-layout,
 #memory,
-#mode,
+#custom-submap,
 #custom-weather,
 #network,
 #pulseaudio,
@@ -101,7 +101,7 @@ window.eDP-1 .modules-right {
     margin: 1px 0px;
 }
 
-#mode {
+#custom-submap {
   border-radius: 10px;
 }
 
@@ -161,7 +161,7 @@ window.eDP-1 .modules-right {
     padding-right:5px;
 }
 
-#mode {
+#custom-submap {
     background: @highlight;
     border-bottom: 3px transparent;
     color:white;

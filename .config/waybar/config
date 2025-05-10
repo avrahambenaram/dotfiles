@@ -11,13 +11,13 @@
 
   "modules-left": [
     "custom/launcher",
-    "sway/workspaces",
-    "sway/mode",
+    "hyprland/workspaces",
+    "custom/submap",
   ],
 
   "modules-center": [
     "clock",
-    "sway/window",
+    "hyprland/window",
     "tray",
   ],
 
@@ -36,7 +36,7 @@
 
   // Modules
 
-  "sway/window": {
+  "hyprland/window": {
       "max-length": 200,
   },
 
@@ -104,7 +104,7 @@
       "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
   },
   
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "format": " {icon} ",
     "format-icons": {
       "1": "",
@@ -114,9 +114,11 @@
     }
   },
 
-  "sway/mode": {
+  "custom/submap": {
     "format": "{}",
-    "tooltip": false
+    "exec": "cat /tmp/hypr-submap",
+    "return-type": "text",
+    "interval": 1
   },
 
   "pulseaudio": {

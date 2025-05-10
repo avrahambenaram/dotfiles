@@ -1,5 +1,0 @@
-exec wl-paste --type text --watch cliphist store
-exec wl-paste --type image --watch cliphist store
-exec wl-clip-persist -c regular
-
-bindsym $mod+x exec cliphist list | wofi --dmenu | cliphist decode | wl-copy

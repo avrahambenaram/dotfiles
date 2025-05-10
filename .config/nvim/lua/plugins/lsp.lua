@@ -51,6 +51,7 @@ return {
       lspconfig.html.setup {}
       lspconfig.lua_ls.setup {}
       lspconfig.omnisharp.setup {
+        cmd = { "omnisharp" },
         settings = {
           FormattingOptions = {
             EnableEditorConfigSupport = true,

@@ -26,5 +26,4 @@ swaylock \
   --ring-clear-color 85c1dc \
   --line-clear-color 85c1dc \
 	--separator-color 00000000 \
-	--grace 5 \
 	--fade-in 0.2
