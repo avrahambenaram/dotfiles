@@ -15,6 +15,8 @@ alias weather='curl http://wttr.in'
 alias mkdir='mkdir -pv'
 alias ff='fastfetch'
 alias vi='nvim'
+alias scrcpym='scrcpy -w --keyboard=uhid --print-fps --max-fps=40 -S'
+alias scrcpyo='scrcpy --otg'
 
 # Waydroid aliases
 alias waydroidStart='sudo modprobe binder_linux && sudo waydroid container start && waydroid session start'
