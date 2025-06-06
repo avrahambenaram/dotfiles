@@ -31,7 +31,8 @@
       "backlight#icon",
       "backlight#value",
       "custom/notification",
-      "custom/power",
+      "idle_inhibitor",
+      "custom/power"
   ],
 
   // Modules
