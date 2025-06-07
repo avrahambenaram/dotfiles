@@ -32,6 +32,7 @@
       "backlight#value",
       "custom/notification",
       "idle_inhibitor",
+      "custom/waysct",
       "custom/power"
   ],
 
@@ -120,6 +121,14 @@
     "exec": "cat /tmp/hypr-submap",
     "return-type": "text",
     "interval": 1
+  },
+
+  "custom/waysct": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/waysct-status",
+    "interval": 1,
+    "on-click": "~/.config/waybar/scripts/waysct-toggle",
+    "return-type": "json"
   },
 
   "pulseaudio": {

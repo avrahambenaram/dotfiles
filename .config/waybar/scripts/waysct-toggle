@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Apenas para clique: iniciar/parar o processo
+if pgrep -x "waysct" > /dev/null; then
+  pkill -x "waysct"
+else
+  waysct -d -mode timed -dayTemp 7000
+fi

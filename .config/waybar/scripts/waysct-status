@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if pgrep -x "waysct" > /dev/null; then
+  echo '{"text": "󰄾", "tooltip": "waysct active", "class": "on"}'
+else
+  echo '{"text": "󰐾", "tooltip": "waysct inactive", "class": "off"}'
+fi
