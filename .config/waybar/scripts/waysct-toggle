@@ -4,5 +4,5 @@
 if pgrep -x "waysct" > /dev/null; then
   pkill -x "waysct"
 else
-  waysct -d -mode timed -dayTemp 7000
+  $HOME/go/bin/waysct -d -mode timed -dayTemp 7000
 fi
