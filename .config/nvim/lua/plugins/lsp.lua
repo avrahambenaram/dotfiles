@@ -8,10 +8,7 @@ return {
         width = 0.8,        -- UI width as a percentage of the terminal width
         height = 0.8,       -- UI height as a percentage of the terminal height
       }
-    },
-    config = function()
-      require("mason").setup()
-    end,
+    }
   },
 
   {
