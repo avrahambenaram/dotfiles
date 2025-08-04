@@ -1,9 +1,9 @@
 hide_search=true
 hide_scroll=true
 insensitive=true
-width=1
+width=100
+height=150
 show=dmenu
-lines=5
 location=centre
 x=870
 y=455
