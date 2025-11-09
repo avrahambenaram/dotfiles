@@ -59,6 +59,7 @@
       },
       "interval": 1,
       "format": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
       "format-not-charging": "{capacity}% ",
       "format-plugged": "{capacity}% ",
       // "format-good": "", // An empty format will hide the module
