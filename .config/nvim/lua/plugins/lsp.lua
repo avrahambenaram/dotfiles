@@ -39,6 +39,19 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
+      lspconfig.ccls.setup {
+        init_options = {
+          index = {
+            threads = 0;
+          };
+          clang = {
+            excludeArgs = { "-frounding-math"} ;
+          };
+          diagnostics = {
+            onChange = 500;
+          };
+        }
+      }
       lspconfig.cssls.setup {}
       lspconfig.docker_compose_language_service.setup {}
       lspconfig.dockerls.setup {}
@@ -65,6 +78,12 @@ return {
         pattern = "*.go",
         callback = function()
           vim.lsp.buf.format({ async = false })
+        end,
+      })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = { "*.c", "*.cpp", "*.h", "*.hpp" },
+        callback = function()
+          vim.cmd("silent! execute '%!clang-format'")
         end,
       })
     end,
