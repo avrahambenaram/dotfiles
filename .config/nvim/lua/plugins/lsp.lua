@@ -75,15 +75,9 @@ return {
       lspconfig.ts_ls.setup {}
 
       vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = "*.go",
+        pattern = { "*.c", "*.cpp", "*.h", "*.hpp", "*.go" },
         callback = function()
           vim.lsp.buf.format({ async = false })
-        end,
-      })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.c", "*.cpp", "*.h", "*.hpp" },
-        callback = function()
-          vim.cmd("silent! execute '%!clang-format'")
         end,
       })
     end,
