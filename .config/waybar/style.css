@@ -32,6 +32,8 @@
     }
 }
 
+@define-color text-color #2c2f49;
+@define-color white-text-color #cad3f5;
 @define-color highlight #ca9ee6;
 @define-color base1 rgba(48, 52, 70, 0.35);
 @define-color border1 #414559;
@@ -44,59 +46,55 @@
 
 /* Reset all styles */
 * {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 1px;
-    padding: 0;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0 0.6rem;
+  margin: 0px;
 }
 
 /* The whole bar */
 #waybar {
-    background: transparent;
-    color: #bebebe;
-    font-family: UbuntuMono;
-    font-size: 12px;
+  color: @text-color;
+  font-family: UbuntuMono;
+  font-size: 12px;
   border-radius: 10px;
   background-color: @base1;
 }
 
-window.HDMI-A-2#waybar {
+.modules-center {
+  background-color: @highlight;
+  color: #2c2f49;
   border-radius: 10px;
-	font-size: 10px;
+	padding: 0 10px;
 }
 
-window.eDP-1 .modules-left {
-  border-radius: 10px;
-	padding: 1.5px 5px;
-	padding-right: 10px;
-}
-window.eDP-1 .modules-center {
-  border-radius: 10px;
-	padding: 1.5px 45px;
-}
-window.eDP-1 .modules-right {
-  border-radius: 10px;
-	padding: 1.5px 15px;
-}
-
-/* Every modules */
-#battery,
-#clock,
-#backlight,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#custom-submap,
-#custom-weather,
+#tray,
 #network,
 #pulseaudio,
-#temperature,
-#tray,
-#idle_inhibitor,
-#custom-PBPbattery {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+#battery,
+#backlight,
+#custom-power {
+  margin: 0 3px;
+}
+
+#custom-weather {
+  background-color: rgba(166, 218, 149, 0.85);
+  border-radius: 10px;
+  margin: 0 3px;
+}
+#cpu {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 3px;
+}
+#memory {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 3px;
+}
+#cpu, #memory {
+  background-color: #f5a97f;
 }
 
 #custom-submap {
@@ -107,10 +105,21 @@ window.eDP-1 .modules-right {
  * Modules styles
  * -------------------------------------------------------------------------- */
 
+#network {
+  background-color: #7dc4e4;
+  border-radius: 10px;
+  padding: 0 10px;
+}
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    background-color: #ed8796;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+#clock {
+    font-family: JetBrainsMono Nerd Font;
 }
 
 #battery.warning {
@@ -162,7 +171,7 @@ window.eDP-1 .modules-right {
     border-bottom: 3px transparent;
     color:white;
     margin-left: 5px;
-    padding: 7px;
+    padding: 0 7px;
 }
 
 #network.disconnected {
@@ -170,15 +179,9 @@ window.eDP-1 .modules-right {
 }
 
 #pulseaudio {
-    padding-top:6px;
-}
-
-#pulseaudio.muted {
-    color: @highlight;
-}
-
-#temperature.critical {
-    color: @critical;
+    /* padding-top:6px; */
+  background-color: #eed49f;
+  border-radius: 10px;
 }
 
 #window {
@@ -186,36 +189,48 @@ window.eDP-1 .modules-right {
 }
 
 #workspaces {
-    font-size:13px;
+  font-size:10px;
 }
 
 #workspaces button {
-    border-bottom: 3px solid transparent;
-    margin-bottom: 0px;
-    padding-right: 5px;
-    color: #bebebe;
+  border-bottom: 3px solid transparent;
+  margin-bottom: 0px;
+  padding-right: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 8px;
+  margin: 6px 3px;
+  border-radius: 5px;
+  box-shadow: inset 0 -3px transparent;
+  transition: all .2s linear;
 }
 
 #workspaces button.focused {
-    border-bottom: 3px solid  @highlight;
-    margin-bottom: 1px;
-    padding-left:0;
+  background-color: #cdd6f4;
+  margin-bottom: 1px;
+  padding-left:0;
+  color: #1e1e2e;
+}
+
+#workspaces button:hover {
+  background-color: rgba(205, 214, 244, 0.5);
 }
 
 #workspaces button.active {
-    border-bottom: 3px solid  @highlight;
-    margin-bottom: 1px;
+  margin-bottom: 1px;
+  background-color: #cdd6f4;
+  color: #1e1e2e;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+  border-color: #c9545d;
+  color: #c9545d;
 }
 
 #custom-power {
-    margin-left:15px;
-    margin-right:15px;
-    font-size:20px;
+  padding: 0 15px;
+  font-size: 18px;
+  background-color: #f0c6c6;
+  border-radius: 8px;
 }
 
 #custom-waysct {
@@ -228,15 +243,22 @@ window.eDP-1 .modules-right {
 }
 
 #custom-launcher {
-    font-size:17px;
-    margin: 0 15px;
+  font-size:17px;
+  color: #1793d1;
 }
 
-#backlight.icon {
-    padding-right:1px;
-    font-size: 13px;
+#backlight {
+  padding: 0 10px;
+  font-size: 13px;
+  background-color: #dd7878;
+  border-radius: 10px;
 }
 
 #custom-notification {
   font-size: 14px;
+}
+
+#tray {
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 10px;
 }
