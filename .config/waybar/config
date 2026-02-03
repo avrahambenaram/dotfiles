@@ -22,6 +22,7 @@
     "tray",
     "idle_inhibitor",
     "custom/waysct",
+    "custom/notification"
   ],
 
   "modules-right": [
@@ -33,7 +34,6 @@
       //"custom/PBPbattery",
       "backlight#icon",
       "backlight#value",
-      "custom/notification",
       "custom/power"
   ],
 
@@ -132,6 +132,27 @@
     "interval": 1,
     "on-click": "~/.config/waybar/scripts/waysct-toggle",
     "return-type": "json"
+  },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='14pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
 
   "custom/weather": {

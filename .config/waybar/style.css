@@ -222,6 +222,11 @@ window.eDP-1 .modules-right {
   margin-right: 5px;
 }
 
+#custom-notification {
+  margin: 0 5px;
+  font-family: "NotoSansMono Nerd Font";
+}
+
 #custom-launcher {
     font-size:17px;
     margin: 0 15px;
