@@ -31,4 +31,4 @@ export EDITOR=nvim
 # PFetch config
 export PF_INFO="ascii title os kernel de wm editor shell uptime pkgs memory palette"
 SHELL="zsh"
-pfetch
+fastfetch
