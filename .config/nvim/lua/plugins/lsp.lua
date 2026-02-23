@@ -39,19 +39,20 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      lspconfig.ccls.setup {
-        init_options = {
-          index = {
-            threads = 0;
-          };
-          clang = {
-            excludeArgs = { "-frounding-math"} ;
-          };
-          diagnostics = {
-            onChange = 500;
-          };
-        }
-      }
+      -- lspconfig.ccls.setup {
+      --   init_options = {
+      --     index = {
+      --       threads = 0;
+      --     };
+      --     clang = {
+      --       excludeArgs = { "-frounding-math"} ;
+      --     };
+      --     diagnostics = {
+      --       onChange = 500;
+      --     };
+      --   }
+      -- }
+      lspconfig.clangd.setup {}
       lspconfig.cssls.setup {}
       lspconfig.docker_compose_language_service.setup {}
       lspconfig.dockerls.setup {}

@@ -38,7 +38,8 @@ return {
       local pok, platformio = pcall(require, 'platformio')
     if pok then
       platformio.setup({
-        lsp = 'ccls',
+        lsp = 'clangd',
+        clangd_source = 'ccls',
         menu_key = '<leader>pi', -- replace this menu key  to your convenience
       })
     end
