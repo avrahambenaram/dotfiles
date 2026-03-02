@@ -1,0 +1,64 @@
+#!/bin/python3
+import requests
+from datetime import datetime
+
+# =========================
+# CONFIG
+# =========================
+CITY = "São Paulo,SP"
+URL = "https://api.hgbrasil.com/weather"
+
+# =========================
+# FETCH DATA
+# =========================
+params = {
+    "city_name": CITY
+}
+
+response = requests.get(URL, params=params)
+data = response.json()
+
+if "results" not in data:
+    print("Error fetching weather.")
+    exit(1)
+
+weather = data["results"]
+
+# =========================
+# FORMAT OUTPUT (wttr-style)
+# =========================
+temp = weather["temp"]
+description = weather["description"]
+humidity = weather["humidity"]
+wind_speed = weather["wind_speedy"]
+condition = weather["condition_slug"]
+
+now = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+# simple ascii condition icons
+icons = {
+    "clear_day": "☀",
+    "clear_night": "🌙",
+    "cloud": "☁",
+    "rain": "🌧",
+    "storm": "⛈",
+    "snow": "❄",
+    "fog": "🌫"
+}
+
+icon = icons.get(condition, "⛅")
+
+# =========================
+# PRINT
+# =========================
+print(f" {icon}  {temp}°C")
+# print()
+# print(f"Weather report for {CITY}")
+# print(f"Updated: {now}")
+# print("─" * 40)
+# print(f" {icon}  {description}")
+# print(f" 🌡  Temperature : {temp}°C")
+# print(f" 💧 Humidity    : {humidity}%")
+# print(f" 🌬  Wind        : {wind_speed}")
+# print("─" * 40)
+# print()
