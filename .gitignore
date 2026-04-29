@@ -1,3 +1,8 @@
 .config/btop/btop.log
+.config/hypr/colors.conf
+.config/hypr/workspaces.conf
 .config/hypr/monitors.conf
 .config/ncspot/userstate.cbor
+.config/alacritty/colors.toml
+.config/nvim/colors.lua
+.config/waybar/style.css
