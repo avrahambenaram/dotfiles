@@ -1,0 +1,245 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: orange;
+    }
+}
+
+@keyframes blink-critical {
+    from {
+      background-color: white;
+    }
+
+    to {
+        background-color: red;
+    }
+}
+
+@define-color text-color #2c2f49;
+@define-color white-text-color {{colors.on_surface_variant.default.hex}};
+@define-color highlight {{colors.primary.default.hex}};
+@define-color base1 rgba({{colors.surface_container_lowest.default.red}}, {{colors.surface_container_lowest.default.green}}, {{colors.surface_container_lowest.default.blue}}, 0.35);
+@define-color border1 #414559;
+@define-color warning #e5c890;
+@define-color critical #e78284;
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0 0.6rem;
+  margin: 0px;
+}
+
+/* The whole bar */
+#waybar {
+  color: @text-color;
+  font-family: UbuntuMono;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: @base1;
+}
+
+.modules-center {
+  background-color: @highlight;
+  color: #2c2f49;
+  border-radius: 10px;
+	padding: 0 10px;
+}
+
+#tray,
+#network,
+#pulseaudio,
+#battery,
+#backlight,
+#custom-power {
+  margin: 0 3px;
+}
+
+#custom-weather {
+  background-color: rgba(166, 218, 149, 0.85);
+  border-radius: 10px;
+  margin: 0 3px;
+}
+#cpu {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 3px;
+}
+#memory {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 3px;
+}
+#cpu, #memory {
+  background-color: #f5a97f;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#custom-submap {
+  border-radius: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modules styles
+ * -------------------------------------------------------------------------- */
+
+#network {
+  background-color: #7dc4e4;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-color: #ed8796;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+#clock {
+    font-family: JetBrainsMono Nerd Font;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#cpu.warning,
+#memory.warning,
+#battery.warning {
+  animation-name: blink-warning;
+  animation-duration: 2s;
+}
+
+#cpu.critical,
+#memory.critical,
+#battery.critical {
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+#custom-submap {
+    background: @highlight;
+    border-bottom: 3px transparent;
+    color:white;
+    margin-left: 5px;
+    padding: 0 7px;
+}
+
+#network.disconnected {
+    color: @warning;
+}
+
+#pulseaudio {
+    /* padding-top:6px; */
+  background-color: #eed49f;
+  border-radius: 10px;
+}
+
+#window {
+    font-weight: bold;
+}
+
+#workspaces {
+  font-size:10px;
+}
+
+#workspaces button {
+  border-bottom: 3px solid transparent;
+  margin-bottom: 0px;
+  padding-right: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 8px;
+  margin: 6px 3px;
+  border-radius: 5px;
+  box-shadow: inset 0 -3px transparent;
+  transition: all .2s linear;
+}
+
+#workspaces button.focused {
+  background-color: @white-text-color;
+  margin-bottom: 1px;
+  padding-left:0;
+  color: #1e1e2e;
+}
+
+#workspaces button:hover {
+  background-color: rgba(205, 214, 244, 0.5);
+}
+
+#workspaces button.active {
+  margin-bottom: 1px;
+  background-color: @white-text-color;
+  color: #1e1e2e;
+}
+
+#workspaces button.urgent {
+  border-color: #c9545d;
+  color: #c9545d;
+}
+
+#custom-power {
+  padding: 0 15px;
+  font-size: 18px;
+  background-color: #f0c6c6;
+  border-radius: 8px;
+}
+
+#custom-waysct {
+  margin-right: 5px;
+}
+
+#custom-notification {
+  margin: 0 5px;
+  font-family: "NotoSansMono Nerd Font";
+}
+
+#custom-launcher {
+  font-size:17px;
+  color: #1793d1;
+}
+
+#backlight {
+  padding: 0 10px;
+  font-size: 13px;
+  background-color: #dd7878;
+  border-radius: 10px;
+}
+
+#custom-notification {
+  font-size: 14px;
+}
+
+#tray {
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 10px;
+}

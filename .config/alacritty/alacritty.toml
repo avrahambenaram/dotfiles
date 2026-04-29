@@ -1,2 +1,2 @@
 [general]
-import = ["/home/avraham/.config/alacritty/window.toml", "/home/avraham/.config/alacritty/theme.toml"]
+import = ["/home/avraham/.config/alacritty/window.toml", "/home/avraham/.config/alacritty/theme.toml", "/home/avraham/.config/alacritty/colors.toml"]

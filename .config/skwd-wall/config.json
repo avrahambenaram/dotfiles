@@ -1,0 +1,105 @@
+{
+  "compositor": "niri",
+  "monitor": "",
+  "general": {
+    "locale": "",
+    "closeOnSelection": true,
+    "reopenAtLastSelection": false
+  },
+  "paths": {
+    "wallpaper": "~/Pictures/Wallpapers",
+    "videoWallpaper": "~/videowalls",
+    "cache": "",
+    "templates": "",
+    "scripts": "",
+    "steam": "",
+    "steamWorkshop": "",
+    "steamWeAssets": ""
+  },
+  "features": {
+    "matugen": true,
+    "ollama": false,
+    "steam": false,
+    "wallhaven": true
+  },
+  "colorSource": "magick",
+  "ollama": {
+    "url": "http://localhost:11434",
+    "model": "gemma3:4b",
+    "consolidateEnabled": true
+  },
+  "steam": {
+    "apiKey": "",
+    "username": ""
+  },
+  "wallhaven": {
+    "apiKey": ""
+  },
+  "matugen": {
+    "schemeType": "scheme-content",
+    "mode": "dark"
+  },
+  "integrations": [
+    {
+      "_comment": "Built-in: MD3 colors for the shell UI (always needed)",
+      "name": "skwd-wall",
+      "template": "quickshell-colors.json",
+      "output": "colors.json"
+    },
+    {
+      "name": "alacritty",
+      "template": "~/.config/alacritty/template.toml",
+      "output": "~/.config/alacritty/colors.toml"
+    },
+    {
+      "name": "Hyprland",
+      "template": "~/.config/hypr/template.conf",
+      "output": "~/.config/hypr/colors.conf",
+      "reload": "hyprctl reload"
+    },
+    {
+      "name": "Vesktop",
+      "template": "vesktop.css",
+      "output": "~/.config/vesktop/themes/colors.css"
+    },
+    {
+      "name": "Waybar",
+      "template": "~/.config/waybar/template.css",
+      "output": "~/.config/waybar/style.css",
+      "reload": "pkill -USR2 waybar"
+    },
+    {
+      "name": "Neovim",
+      "template": "~/.config/nvim/template.lua",
+      "output": "~/.config/nvim/colors.lua"
+    }
+  ],
+  "components": {
+    "wallpaperSelector": {
+      "displayMode": "hex",
+      "sliceSpacing": -30,
+      "hexScrollStep": 1,
+      "customPresets": {},
+      "hexArc": true,
+      "hexRows": 1,
+      "hexArcIntensity": 3,
+      "hexRadius": 160
+    }
+  },
+  "wallpaperMute": true,
+  "performance": {
+    "imageOptimizePreset": "balanced",
+    "imageOptimizeResolution": "1080p",
+    "videoConvertPreset": "balanced",
+    "videoConvertResolution": "2k",
+    "autoOptimizeImages": false,
+    "autoConvertVideos": false,
+    "imageTrashDays": 7,
+    "videoTrashDays": 7,
+    "autoDeleteImageTrash": false,
+    "autoDeleteVideoTrash": false
+  },
+  "postProcessing": [],
+  "externalMatugenCommand": "matugen -c %config% image %path%",
+  "defaultMatugenConfig": "/home/avraham/.config/matugen/config.toml"
+}

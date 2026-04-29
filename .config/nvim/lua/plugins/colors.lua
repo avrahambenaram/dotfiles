@@ -1,10 +1,16 @@
 return {
   {
+    "RRethy/base16-nvim",
+  },
+  {
     "catppuccin/nvim",
     priority = 1000,
-    config = function ()
-      vim.cmd("colorscheme catppuccin-macchiato")
-    end
+  },
+  {
+    "ficcdaf/ashen.nvim",
+    -- optional but recommended,
+    -- pin to the latest stable release:
+    priority = 1000,
   },
   {
     "cocopon/iceberg.vim",
